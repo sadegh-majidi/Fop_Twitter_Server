@@ -1,5 +1,6 @@
 package service;
 
+import exception.BadRequestException;
 import model.User;
 import repository.TweetsRepository;
 import repository.UserRepository;
@@ -26,10 +27,22 @@ public class ResponseService {
     }
 
     public String login(String username, String password) {
-        return "";
+        User user = userRepository.getUserByUsername(username);
+        if (!user.getPassword().equals(password))
+            throw new BadRequestException("Incorrect password.");
+        if (user.getToken() != null)
+            throw new BadRequestException("The user " + user.getUsername() + " is already logged in.");
+        user.setToken(tokenGenerator.generate());
+        userRepository.addOnlineUser(user);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully logged in.");
+        return user.getToken();
     }
 
     public void logout(String token) {
-
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        userRepository.deleteOnlineUser(token);
+        user.setToken(null);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully logged out.");
     }
+
 }

@@ -32,6 +32,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.bio = "";
+        this.token = null;
         this.followers = new HashSet<>();
         this.followings = new HashSet<>();
         this.personalTweets = new ArrayList<>();

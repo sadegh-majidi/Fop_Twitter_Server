@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f6f3c2c0-06b8-45a2-8d9a-9645c6ed3ab7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RequestHandlingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RequestHandlingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Response.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/server/ServerEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/server/ServerEventHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607287607954</updated>
       <workItem from="1607287610043" duration="9883000" />
-      <workItem from="1607341502304" duration="14217000" />
+      <workItem from="1607341502304" duration="17717000" />
     </task>
     <task id="LOCAL-00001" summary="migrate from spring boot to socket :))">
       <created>1607294849256</created>
@@ -147,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607359033292</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="register user">
+      <created>1607363427082</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607363427082</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +162,8 @@
     <MESSAGE value="bad request exception" />
     <MESSAGE value="Request Handler method" />
     <MESSAGE value="Request Handler Response producer methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Request Handler Response producer methods" />
+    <MESSAGE value="register user" />
+    <option name="LAST_COMMIT_MESSAGE" value="register user" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Project_Structure" timestamp="1607288040952">
@@ -171,34 +174,34 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1607354184659" />
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1607359029894">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1607363421182">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1607359029894" />
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1607334940351">
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1607363421182" />
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1607376594307">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607334940351" />
-    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1607334940350">
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607376594307" />
+    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1607376594307">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1607334940350" />
-    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1607334940350">
+    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1607376594307" />
+    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1607376594307">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1607334940350" />
-    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1607334940351">
+    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1607376594307" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1607376594307">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1607334940351" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1607376594307" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1607288010153">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1607288010153" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1607356269687">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1607363478564">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1607356269687" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1607363478564" />
     <state x="359" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1607342023745">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

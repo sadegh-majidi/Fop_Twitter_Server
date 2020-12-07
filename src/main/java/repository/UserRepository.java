@@ -36,10 +36,14 @@ public class UserRepository {
     }
 
     public User getUserByUsername(String username) {
+        if (!allUsers.containsKey(username))
+            throw new BadRequestException("This username is not valid.");
         return allUsers.get(username);
     }
 
     public User getAuthenticatedUserByToken(String token) {
+        if (!authenticatedUsersByToken.containsKey(token))
+            throw new BadRequestException("Authentication failed!");
         return authenticatedUsersByToken.get(token);
     }
 
