@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6f3c2c0-06b8-45a2-8d9a-9645c6ed3ab7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/ServerEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ServerEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/RequestHandlingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RequestHandlingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Response.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/server/ServerEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/server/ServerEventHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607287607954</updated>
       <workItem from="1607287610043" duration="9883000" />
-      <workItem from="1607341502304" duration="10051000" />
+      <workItem from="1607341502304" duration="14217000" />
     </task>
     <task id="LOCAL-00001" summary="migrate from spring boot to socket :))">
       <created>1607294849256</created>
@@ -134,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607356259464</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Request Handler Response producer methods">
+      <created>1607359033292</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607359033292</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +159,8 @@
     <MESSAGE value="request regex patterns" />
     <MESSAGE value="bad request exception" />
     <MESSAGE value="Request Handler method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Request Handler method" />
+    <MESSAGE value="Request Handler Response producer methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Request Handler Response producer methods" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Project_Structure" timestamp="1607288040952">
@@ -157,10 +171,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1607354184659" />
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1607356256255">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1607359029894">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1607356256255" />
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1607359029894" />
     <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1607334940351">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

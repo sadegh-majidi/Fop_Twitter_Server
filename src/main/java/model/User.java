@@ -28,10 +28,10 @@ public class User {
     @Expose
     private List<Integer> personalTweets;
 
-    public User(String username, String password, String bio) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.bio = bio;
+        this.bio = "";
         this.followers = new HashSet<>();
         this.followings = new HashSet<>();
         this.personalTweets = new ArrayList<>();

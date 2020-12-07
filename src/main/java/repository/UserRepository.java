@@ -1,5 +1,6 @@
 package repository;
 
+import exception.BadRequestException;
 import model.User;
 import utils.JsonFileWriterUtil;
 
@@ -43,6 +44,8 @@ public class UserRepository {
     }
 
     public void addUser(User user) {
+        if (this.allUsers.containsKey(user.getUsername()))
+            throw new BadRequestException("This username is already taken.");
         this.allUsers.put(user.getUsername(), user);
         JsonFileWriterUtil fileWriter = new JsonFileWriterUtil();
         String filePath = "Resources/Users/" + user.getUsername() + ".user.json";

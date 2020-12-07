@@ -61,11 +61,13 @@ public class RequestHandlingController {
     }
 
     private Response<String> signUp(Matcher matcher) {
-        return null;
+        responseService.signUp(matcher.group(1), matcher.group(2));
+        return new Response<>(ResponseType.Successful, "");
     }
 
     private Response<String> login(Matcher matcher) {
-        return null;
+        String token = responseService.login(matcher.group(1), matcher.group(2));
+        return new Response<>(ResponseType.Token, token);
     }
 
     private Response<String> sendTweet(Matcher matcher) {
@@ -109,6 +111,7 @@ public class RequestHandlingController {
     }
 
     private Response<String> logout(Matcher matcher) {
-        return null;
+        responseService.logout(matcher.group(1));
+        return new Response<>(ResponseType.Successful, "");
     }
 }
