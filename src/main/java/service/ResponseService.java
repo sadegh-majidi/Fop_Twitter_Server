@@ -45,4 +45,24 @@ public class ResponseService {
         logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully logged out.");
     }
 
+    public void setBio(String token, String bio) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        if (!user.getBio().isEmpty())
+            throw new BadRequestException("Bio is already updated.");
+        user.setBio(bio);
+        userRepository.updateUser(user);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + "'s bio successfully updated.");
+    }
+
+    public void changePassword(String token, String currentPassword, String newPassword) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        if (!user.getPassword().equals(currentPassword))
+            throw new BadRequestException("Entered current password is wrong.");
+        if (user.getPassword().equals(newPassword))
+            throw new BadRequestException("New password is equal to current password.");
+        user.setPassword(newPassword);
+        userRepository.updateUser(user);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + "'s password successfully changed.");
+    }
+
 }

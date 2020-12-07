@@ -103,11 +103,13 @@ public class RequestHandlingController {
     }
 
     private Response<String> setBio(Matcher matcher) {
-        return null;
+        responseService.setBio(matcher.group(1), matcher.group(2));
+        return new Response<>(ResponseType.Successful, "Bio successfully updated.");
     }
 
     private Response<String> changePassword(Matcher matcher) {
-        return null;
+        responseService.changePassword(matcher.group(1), matcher.group(2), matcher.group(3));
+        return new Response<>(ResponseType.Successful, "Password successfully changed.");
     }
 
     private Response<String> logout(Matcher matcher) {

@@ -64,10 +64,9 @@ public class UserRepository {
         this.authenticatedUsersByToken.put(user.getToken(), user);
     }
 
-    public void updateUser(String username, User user) {
-        this.allUsers.replace(username, user);
+    public void updateUser(User user) {
         JsonFileWriterUtil fileWriter = new JsonFileWriterUtil();
-        String filePath = "Resources/Users/" + username + ".user.json";
+        String filePath = "Resources/Users/" + user.getUsername() + ".user.json";
         try {
             fileWriter.write(user, filePath);
         } catch (IOException e) {
