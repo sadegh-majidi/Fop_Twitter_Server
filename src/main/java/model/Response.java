@@ -1,6 +1,9 @@
 package model;
 
+import com.google.gson.Gson;
+
 public class Response<T> {
+    private static final Gson gson = new Gson();
     private ResponseType type;
     private T message;
 
@@ -23,5 +26,9 @@ public class Response<T> {
 
     public void setMessage(T message) {
         this.message = message;
+    }
+
+    public String convertToJson() {
+        return gson.toJson(this);
     }
 }

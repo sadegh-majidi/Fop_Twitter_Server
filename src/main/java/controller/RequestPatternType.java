@@ -1,4 +1,4 @@
-package server;
+package controller;
 
 import java.util.regex.Pattern;
 
@@ -14,7 +14,8 @@ public enum RequestPatternType {
     UnFollow(Pattern.compile("^unfollow\\s+(.+)\\s*,\\s*(\\S+)$")),
     Profile(Pattern.compile("^profile\\s+(.+)$")),
     SetBio(Pattern.compile("^set\\s+bio\\s+(.+)\\s*,\\s*(.+)$")),
-    ChangePassword(Pattern.compile("^change\\s+password\\s+(.+)\\s*,\\s*(\\S+)\\s*,\\s*(\\S+)$"))
+    ChangePassword(Pattern.compile("^change\\s+password\\s+(.+)\\s*,\\s*(\\S+)\\s*,\\s*(\\S+)$")),
+    Logout(Pattern.compile("^logout\\s+(.+)$"))
     ;
     private final Pattern pattern;
 
