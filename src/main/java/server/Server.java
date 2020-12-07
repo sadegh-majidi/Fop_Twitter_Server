@@ -21,13 +21,13 @@ public class Server {
 
     public Server(Logger logger) {
         this.logger = logger;
-        serverEventHandler = new ServerEventHandler();
+        serverEventHandler = new ServerEventHandler(logger);
     }
 
     public void init() {
         logger.log(LogLevel.Info, "Initializing...");
         serverEventHandler.init();
-        requestHandler = new RequestHandlingController();
+        requestHandler = new RequestHandlingController(logger);
         logger.log(LogLevel.Info, "Initialized.");
     }
 

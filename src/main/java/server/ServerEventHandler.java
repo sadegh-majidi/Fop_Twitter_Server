@@ -5,15 +5,21 @@ import model.User;
 import repository.TweetsRepository;
 import repository.UserRepository;
 import utils.JsonFileReaderUtil;
+import utils.LogLevel;
+import utils.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 public class ServerEventHandler {
     private UserRepository userRepository;
     private TweetsRepository tweetsRepository;
+    private final Logger logger;
 
-    public ServerEventHandler() {
+    public ServerEventHandler(Logger logger) {
+        this.logger = logger;
         userRepository = UserRepository.getInstance();
         tweetsRepository = TweetsRepository.getInstance();
     }
@@ -35,7 +41,7 @@ public class ServerEventHandler {
                     User user = reader.read(file, User.class);
                     userRepository.allUsers.put(user.getUsername(), user);
                 } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                    handleError(e);
                 }
             }
         }
@@ -52,9 +58,17 @@ public class ServerEventHandler {
                     Tweet tweet = reader.read(file, Tweet.class);
                     tweetsRepository.allTweets.put(tweet.getId(), tweet);
                 } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                    handleError(e);
                 }
             }
+            Tweet.setNumberOfTweets(tweetsFiles.length);
         }
+    }
+
+    private <T extends Exception> void handleError(T e) {
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter printWriter = new PrintWriter(stringWriter);
+        e.printStackTrace(printWriter);
+        logger.log(LogLevel.Error, stringWriter.toString());
     }
 }
