@@ -7,7 +7,6 @@ public class RequestHandlingController {
     private TokenGenerator tokenGenerator;
 
     public RequestHandlingController() {
-        //hich
         tokenGenerator = new TokenGenerator();
     }
 
