@@ -85,7 +85,8 @@ public class RequestHandlingController {
     }
 
     private Response<String> commentTweet(Matcher matcher) {
-        return null;
+        responseService.commentTweet(matcher.group(1), Integer.parseInt(matcher.group(2)), matcher.group(3));
+        return new Response<>(ResponseType.Successful, "Comment is sent successfully.");
     }
 
     private Response<User> searchUser(Matcher matcher) {

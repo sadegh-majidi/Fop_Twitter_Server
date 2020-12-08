@@ -107,4 +107,13 @@ public class ResponseService {
         userRepository.updateUser(user);
         logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully send a tweet.");
     }
+
+    public void commentTweet(String token, int tweetId ,String content) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        Tweet tweet = tweetsRepository.getTweetById(tweetId);
+        tweet.addComment(user.getUsername(), content);
+        tweetsRepository.updateTweet(tweet);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully send a comment.");
+    }
+
 }
