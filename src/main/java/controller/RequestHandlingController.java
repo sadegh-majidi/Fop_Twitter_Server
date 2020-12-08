@@ -72,7 +72,7 @@ public class RequestHandlingController {
 
     private Response<String> sendTweet(Matcher matcher) {
         responseService.sendTweet(matcher.group(1), matcher.group(2));
-        return new Response<>(ResponseType.Successful, "Tweet is sent successfully.");
+        return new Response<>(ResponseType.Successful, "Tweet was sent successfully.");
     }
 
     private Response<List<Tweet>> refreshTimeLine(Matcher matcher) {

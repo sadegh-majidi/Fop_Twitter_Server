@@ -72,6 +72,8 @@ public class ResponseService {
     public void follow(String token, String username) {
         User follower = userRepository.getAuthenticatedUserByToken(token);
         User following = userRepository.getUserByUsername(username);
+        if (follower.getUsername().equals(following.getUsername()))
+            throw new BadRequestException("You can't follow yourself!");
         if (follower.hasFollowing(following))
             throw new BadRequestException("User " + following.getUsername() + " is already followed by you.");
         follower.addFollowing(following);
@@ -84,6 +86,8 @@ public class ResponseService {
     public void unFollow(String token, String username) {
         User follower = userRepository.getAuthenticatedUserByToken(token);
         User following = userRepository.getUserByUsername(username);
+        if (follower.getUsername().equals(following.getUsername()))
+            throw new BadRequestException("You can not unFollow yourself!");
         if (!follower.hasFollowing(following))
             throw new BadRequestException("User " + following.getUsername() + " is not followed by you.");
         follower.removeFollowing(following);
