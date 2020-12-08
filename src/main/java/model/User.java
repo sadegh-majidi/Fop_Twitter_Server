@@ -109,7 +109,7 @@ public class User {
         return personalTweets;
     }
 
-    public void addTweet(int tweetId) {
-        this.personalTweets.add(tweetId);
+    public void addTweet(Tweet tweet) {
+        this.personalTweets.add(tweet.getId());
     }
 }

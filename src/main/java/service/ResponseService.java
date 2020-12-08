@@ -99,4 +99,12 @@ public class ResponseService {
         logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully liked tweet " + tweet.getId() + ".");
     }
 
+    public void sendTweet(String token, String content) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        Tweet tweet = new Tweet(content);
+        tweetsRepository.addTweet(tweet);
+        user.addTweet(tweet);
+        userRepository.updateUser(user);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully send a tweet.");
+    }
 }
