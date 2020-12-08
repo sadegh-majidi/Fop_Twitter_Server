@@ -74,26 +74,34 @@ public class User {
         return followers;
     }
 
-    public void addFollower(String user) {
-        this.followers.add(user);
+    public void addFollower(User user) {
+        this.followers.add(user.getUsername());
     }
 
     //TODO: add Exception user not found
-    public void removeFollower(String user) {
-        this.followers.remove(user);
+    public void removeFollower(User user) {
+        this.followers.remove(user.getUsername());
+    }
+
+    public boolean hasFollower(User user) {
+        return this.followers.contains(user.getUsername());
     }
 
     public Set<String> getFollowings() {
         return followings;
     }
 
-    public void addFollowing(String user) {
-        this.followings.add(user);
+    public void addFollowing(User user) {
+        this.followings.add(user.getUsername());
     }
 
     //TODO: add Exception user not found
-    public void removeFollowing(String user) {
-        this.followings.remove(user);
+    public void removeFollowing(User user) {
+        this.followings.remove(user.getUsername());
+    }
+
+    public boolean hasFollowing(User user) {
+        return this.followings.contains(user.getUsername());
     }
 
     //TODO: override

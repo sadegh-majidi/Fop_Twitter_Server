@@ -91,7 +91,8 @@ public class RequestHandlingController {
     }
 
     private Response<String> follow(Matcher matcher) {
-        return null;
+        responseService.follow(matcher.group(1), matcher.group(2));
+        return new Response<>(ResponseType.Successful, "User " + matcher.group(2) + " successfully followed.");
     }
 
     private Response<String> unFollow(Matcher matcher) {

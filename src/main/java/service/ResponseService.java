@@ -65,4 +65,16 @@ public class ResponseService {
         logger.log(LogLevel.Info, "User " + user.getUsername() + "'s password successfully changed.");
     }
 
+    public void follow(String token, String username) {
+        User follower = userRepository.getAuthenticatedUserByToken(token);
+        User following = userRepository.getUserByUsername(username);
+        if (follower.hasFollowing(following))
+            throw new BadRequestException("User " + following.getUsername() + " is already followed by you.");
+        follower.addFollowing(following);
+        following.addFollower(follower);
+        userRepository.updateUser(follower);
+        userRepository.updateUser(following);
+        logger.log(LogLevel.Info, "User " + follower.getUsername() + " successfully followed user " + following.getUsername() + ".");
+    }
+
 }
