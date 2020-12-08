@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f6f3c2c0-06b8-45a2-8d9a-9645c6ed3ab7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/TweetsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/TweetsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607287607954</updated>
       <workItem from="1607287610043" duration="9883000" />
-      <workItem from="1607341502304" duration="23163000" />
+      <workItem from="1607341502304" duration="25471000" />
     </task>
     <task id="LOCAL-00001" summary="migrate from spring boot to socket :))">
       <created>1607294849256</created>
@@ -166,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607422725462</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="unFollow added">
+      <created>1607427176887</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607427176887</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +192,8 @@
     <MESSAGE value="login and logout user added" />
     <MESSAGE value="set bio and change password added." />
     <MESSAGE value="follow added" />
-    <option name="LAST_COMMIT_MESSAGE" value="follow added" />
+    <MESSAGE value="unFollow added" />
+    <option name="LAST_COMMIT_MESSAGE" value="unFollow added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Project_Structure" timestamp="1607288040952">
@@ -194,10 +204,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1607354184659" />
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1607422722405">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1607427174262">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1607422722405" />
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1607427174262" />
     <state x="110" y="56" key="DiffContextDialog" timestamp="1607422699896">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

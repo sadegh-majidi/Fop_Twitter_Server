@@ -1,6 +1,7 @@
 package service;
 
 import exception.BadRequestException;
+import model.Tweet;
 import model.User;
 import repository.TweetsRepository;
 import repository.UserRepository;
@@ -87,6 +88,15 @@ public class ResponseService {
         userRepository.updateUser(follower);
         userRepository.updateUser(following);
         logger.log(LogLevel.Info, "User " + follower.getUsername() + " successfully unFollowed user " + following.getUsername() + ".");
+    }
+
+    //TODO: har nafar faghat mitone 1 bar like kone ya mohem nis??
+    public void likeTweet(String token, int tweetId) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        Tweet tweet = tweetsRepository.getTweetById(tweetId);
+        tweet.increaseLikes();
+        tweetsRepository.updateTweet(tweet);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully liked tweet " + tweet.getId() + ".");
     }
 
 }

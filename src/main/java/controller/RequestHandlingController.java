@@ -79,7 +79,8 @@ public class RequestHandlingController {
     }
 
     private Response<String> likeTweet(Matcher matcher) {
-        return null;
+        responseService.likeTweet(matcher.group(1), Integer.parseInt(matcher.group(2)));
+        return new Response<>(ResponseType.Successful, "Tweet " + matcher.group(2) + " successfully liked.");
     }
 
     private Response<String> commentTweet(Matcher matcher) {

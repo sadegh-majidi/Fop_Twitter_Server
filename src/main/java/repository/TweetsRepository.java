@@ -1,5 +1,6 @@
 package repository;
 
+import exception.BadRequestException;
 import model.Tweet;
 import utils.JsonFileWriterUtil;
 
@@ -29,10 +30,14 @@ public class TweetsRepository {
     }
 
     public Tweet getTweetById(int id) {
+        if (!allTweets.containsKey(id))
+            throw new BadRequestException("Tweet with this id is not available.");
         return allTweets.get(id);
     }
 
     public void addTweet(Tweet tweet) {
+        if (allTweets.containsKey(tweet.getId()))
+            throw new BadRequestException("Can not add tweet because there is a tweet with this id.");
         this.allTweets.put(tweet.getId(), tweet);
         JsonFileWriterUtil fileWriter = new JsonFileWriterUtil();
         String filePath = "Resources/Tweets/" + tweet.getId() + ".tweet.json";
@@ -43,10 +48,9 @@ public class TweetsRepository {
         }
     }
 
-    public void updateTweet(int id, Tweet tweet) {
-        this.allTweets.replace(id, tweet);
+    public void updateTweet(Tweet tweet) {
         JsonFileWriterUtil fileWriter = new JsonFileWriterUtil();
-        String filePath = "Resources/Tweets/" + id + ".tweet.json";
+        String filePath = "Resources/Tweets/" + tweet.getId() + ".tweet.json";
         try {
             fileWriter.write(tweet, filePath);
         } catch (IOException e) {
