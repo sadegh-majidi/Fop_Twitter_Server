@@ -96,7 +96,8 @@ public class RequestHandlingController {
     }
 
     private Response<String> unFollow(Matcher matcher) {
-        return null;
+        responseService.unFollow(matcher.group(1), matcher.group(2));
+        return new Response<>(ResponseType.Successful, "User " + matcher.group(2) + " successfully unFollowed.");
     }
 
     private Response<User> getProfile(Matcher matcher) {

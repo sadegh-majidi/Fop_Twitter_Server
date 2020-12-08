@@ -77,4 +77,16 @@ public class ResponseService {
         logger.log(LogLevel.Info, "User " + follower.getUsername() + " successfully followed user " + following.getUsername() + ".");
     }
 
+    public void unFollow(String token, String username) {
+        User follower = userRepository.getAuthenticatedUserByToken(token);
+        User following = userRepository.getUserByUsername(username);
+        if (!follower.hasFollowing(following))
+            throw new BadRequestException("User " + following.getUsername() + " is not followed by you.");
+        follower.removeFollowing(following);
+        following.removeFollower(follower);
+        userRepository.updateUser(follower);
+        userRepository.updateUser(following);
+        logger.log(LogLevel.Info, "User " + follower.getUsername() + " successfully unFollowed user " + following.getUsername() + ".");
+    }
+
 }
