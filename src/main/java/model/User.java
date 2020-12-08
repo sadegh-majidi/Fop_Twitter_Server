@@ -16,6 +16,8 @@ public class User {
 
     private String token;
 
+    private int timeLineIndex;
+
     @Expose
     private String bio;
 
@@ -32,6 +34,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.bio = "";
+        this.timeLineIndex = 0;
         this.token = null;
         this.followers = new HashSet<>();
         this.followings = new HashSet<>();
@@ -112,4 +115,13 @@ public class User {
     public void addTweet(Tweet tweet) {
         this.personalTweets.add(tweet.getId());
     }
+
+    public int getTimeLineIndex() {
+        return timeLineIndex;
+    }
+
+    public void setTimeLineIndex(int timeLineIndex) {
+        this.timeLineIndex = timeLineIndex;
+    }
+
 }

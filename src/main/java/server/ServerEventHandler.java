@@ -39,6 +39,7 @@ public class ServerEventHandler {
             for (File file : userFiles) {
                 try {
                     User user = reader.read(file, User.class);
+                    user.setTimeLineIndex(0);
                     userRepository.allUsers.put(user.getUsername(), user);
                 } catch (FileNotFoundException e) {
                     handleError(e);

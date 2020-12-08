@@ -8,6 +8,9 @@ import repository.UserRepository;
 import utils.LogLevel;
 import utils.Logger;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class ResponseService {
     private final Logger logger;
     private TokenGenerator tokenGenerator;
@@ -114,6 +117,30 @@ public class ResponseService {
         tweet.addComment(user.getUsername(), content);
         tweetsRepository.updateTweet(tweet);
         logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully send a comment.");
+    }
+
+    public List<Tweet> refreshTimeLine(String token) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        List<Tweet> allTimeLineTweets = new ArrayList<>();
+        List<String> allConnectedUsers = new ArrayList<>(mergeSets(user.getFollowers(), user.getFollowings()));
+        Collections.sort(allConnectedUsers);
+        for (String connectedUser : allConnectedUsers) {
+            User _user = userRepository.getUserByUsername(connectedUser);
+            allTimeLineTweets.addAll(_user.getPersonalTweets().stream()
+                    .map(id -> tweetsRepository.getTweetById(id)).collect(Collectors.toList()));
+        }
+        List<Tweet> result = user.getTimeLineIndex() < allTimeLineTweets.size()?
+                allTimeLineTweets.subList(user.getTimeLineIndex(), allTimeLineTweets.size()): Collections.emptyList();
+        user.setTimeLineIndex(allTimeLineTweets.size());
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully refreshed timeline.");
+        return result;
+    }
+
+    private Set<String> mergeSets(Set<String> a, Set<String> b) {
+        return new HashSet<String>() {{
+            addAll(a);
+            addAll(b);
+        }};
     }
 
 }

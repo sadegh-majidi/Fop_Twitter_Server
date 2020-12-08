@@ -76,7 +76,8 @@ public class RequestHandlingController {
     }
 
     private Response<List<Tweet>> refreshTimeLine(Matcher matcher) {
-        return null;
+        List<Tweet> tweets = responseService.refreshTimeLine(matcher.group(1));
+        return new Response<>(ResponseType.List, tweets);
     }
 
     private Response<String> likeTweet(Matcher matcher) {
