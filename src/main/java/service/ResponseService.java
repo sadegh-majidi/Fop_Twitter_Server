@@ -1,6 +1,8 @@
 package service;
 
 import exception.BadRequestException;
+import model.FollowStatus;
+import model.Profile;
 import model.Tweet;
 import model.User;
 import repository.TweetsRepository;
@@ -138,6 +140,25 @@ public class ResponseService {
         user.setTimeLineIndex(allTimeLineTweets.size());
         logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully refreshed timeline.");
         return result;
+    }
+
+    public Profile search(String token, String username) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        User searchedUser = userRepository.getUserByUsername(username);
+        Profile profile;
+        if (user.hasFollowing(searchedUser))
+            profile = new Profile(searchedUser, FollowStatus.Followed);
+        else
+            profile = new Profile(searchedUser, FollowStatus.NotFollowed);
+        logger.log(LogLevel.Info, "User " + user + " successfully searched user " + searchedUser.getUsername() + ".");
+        return profile;
+    }
+
+    public Profile getProfile(String token) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        Profile profile = new Profile(user, FollowStatus.Yourself);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully viewed his/her profile.");
+        return profile;
     }
 
     private Set<String> mergeSets(Set<String> a, Set<String> b) {

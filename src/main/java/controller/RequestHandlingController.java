@@ -1,10 +1,7 @@
 package controller;
 
 import exception.BadRequestException;
-import model.Response;
-import model.ResponseType;
-import model.Tweet;
-import model.User;
+import model.*;
 import service.ResponseService;
 import utils.LogLevel;
 import utils.Logger;
@@ -90,8 +87,9 @@ public class RequestHandlingController {
         return new Response<>(ResponseType.Successful, "Comment is sent successfully.");
     }
 
-    private Response<User> searchUser(Matcher matcher) {
-        return null;
+    private Response<Profile> searchUser(Matcher matcher) {
+        model.Profile profile = responseService.search(matcher.group(1), matcher.group(2));
+        return new Response<>(ResponseType.Profile, profile);
     }
 
     private Response<String> follow(Matcher matcher) {
@@ -104,8 +102,9 @@ public class RequestHandlingController {
         return new Response<>(ResponseType.Successful, "User " + matcher.group(2) + " successfully unFollowed.");
     }
 
-    private Response<User> getProfile(Matcher matcher) {
-        return null;
+    private Response<Profile> getProfile(Matcher matcher) {
+        model.Profile profile = responseService.getProfile(matcher.group(1));
+        return new Response<>(ResponseType.Profile, profile);
     }
 
     private Response<String> setBio(Matcher matcher) {

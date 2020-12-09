@@ -4,5 +4,6 @@ public enum ResponseType {
     Successful,
     Token,
     Error,
-    List
+    List,
+    Profile
 }
