@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6f3c2c0-06b8-45a2-8d9a-9645c6ed3ab7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/FollowStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Profile.java" afterDir="false" />
+    <list default="true" id="f6f3c2c0-06b8-45a2-8d9a-9645c6ed3ab7" name="Default Changelist" comment="search user and profile added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ResponseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ResponseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RequestPatternType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RequestPatternType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/TweetsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/TweetsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repository/TweetsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repository/TweetsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TokenGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/RequestHandlingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RequestHandlingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ResponseType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ResponseType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/ResponseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/ResponseService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +96,7 @@
       <updated>1607287607954</updated>
       <workItem from="1607287610043" duration="9883000" />
       <workItem from="1607341502304" duration="35910000" />
-      <workItem from="1607522702919" duration="5472000" />
+      <workItem from="1607522702919" duration="6194000" />
     </task>
     <task id="LOCAL-00001" summary="migrate from spring boot to socket :))">
       <created>1607294849256</created>
@@ -214,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607444728764</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="search user and profile added">
+      <created>1607528445726</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607528445726</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +246,8 @@
     <MESSAGE value="send tweet added" />
     <MESSAGE value="refresh timeline added" />
     <MESSAGE value="fix minor bugs and test methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix minor bugs and test methods" />
+    <MESSAGE value="search user and profile added" />
+    <option name="LAST_COMMIT_MESSAGE" value="search user and profile added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Project_Structure" timestamp="1607288040952">
@@ -247,30 +258,30 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1607524588117" />
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1607444723503">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1607529008189">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1607444723503" />
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1607529008189" />
     <state x="110" y="56" key="DiffContextDialog" timestamp="1607422699896">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="110" y="56" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1607422699896" />
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1607444769774">
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1607529022566">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607444769774" />
-    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1607444769773">
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607529022566" />
+    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1607529022565">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1607444769773" />
-    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1607444769773">
+    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1607529022565" />
+    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1607529022564">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1607444769773" />
-    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1607444769774">
+    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1607529022564" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1607529022566">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1607444769774" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1607529022566" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1607288010153">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

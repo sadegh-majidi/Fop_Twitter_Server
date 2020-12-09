@@ -15,8 +15,7 @@ public enum RequestPatternType {
     Profile(Pattern.compile("^profile\\s+(.+)$")),
     SetBio(Pattern.compile("^set\\s+bio\\s+(.+)\\s*,\\s*(.+)$")),
     ChangePassword(Pattern.compile("^change\\s+password\\s+(.+)\\s*,\\s*(\\S+)\\s*,\\s*(\\S+)$")),
-    Logout(Pattern.compile("^logout\\s+(.+)$"))
-    ;
+    Logout(Pattern.compile("^logout\\s+(.+)$"));
     private final Pattern pattern;
 
     RequestPatternType(Pattern pattern) {

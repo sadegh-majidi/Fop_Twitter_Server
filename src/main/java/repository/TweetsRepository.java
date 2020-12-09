@@ -15,7 +15,7 @@ public class TweetsRepository {
     public Map<Integer, Tweet> allTweets;
     private static TweetsRepository instance;
 
-    public static TweetsRepository getInstance(){
+    public static TweetsRepository getInstance() {
         if (instance == null)
             instance = new TweetsRepository();
         return instance;

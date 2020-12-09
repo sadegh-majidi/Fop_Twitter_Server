@@ -32,7 +32,7 @@ public class UserRepository {
     }
 
     public Map<String, User> getAllAuthenticatedUsers() {
-        return  authenticatedUsersByToken;
+        return authenticatedUsersByToken;
     }
 
     public User getUserByUsername(String username) {

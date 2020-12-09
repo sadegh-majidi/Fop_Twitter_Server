@@ -81,7 +81,6 @@ public class User {
         this.followers.add(user.getUsername());
     }
 
-    //TODO: add Exception user not found
     public void removeFollower(User user) {
         this.followers.remove(user.getUsername());
     }
@@ -98,7 +97,6 @@ public class User {
         this.followings.add(user.getUsername());
     }
 
-    //TODO: add Exception user not found
     public void removeFollowing(User user) {
         this.followings.remove(user.getUsername());
     }
@@ -107,7 +105,6 @@ public class User {
         return this.followings.contains(user.getUsername());
     }
 
-    //TODO: override
     public List<Integer> getPersonalTweets() {
         return personalTweets;
     }

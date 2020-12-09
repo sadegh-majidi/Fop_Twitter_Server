@@ -9,6 +9,7 @@ import repository.TweetsRepository;
 import repository.UserRepository;
 import utils.LogLevel;
 import utils.Logger;
+import utils.TokenGenerator;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -117,7 +118,7 @@ public class ResponseService {
         logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully send a tweet.");
     }
 
-    public void commentTweet(String token, int tweetId ,String content) {
+    public void commentTweet(String token, int tweetId, String content) {
         User user = userRepository.getAuthenticatedUserByToken(token);
         Tweet tweet = tweetsRepository.getTweetById(tweetId);
         tweet.addComment(user.getUsername(), content);
@@ -135,8 +136,8 @@ public class ResponseService {
             allTimeLineTweets.addAll(_user.getPersonalTweets().stream()
                     .map(id -> tweetsRepository.getTweetById(id)).collect(Collectors.toList()));
         }
-        List<Tweet> result = user.getTimeLineIndex() < allTimeLineTweets.size()?
-                allTimeLineTweets.subList(user.getTimeLineIndex(), allTimeLineTweets.size()): Collections.emptyList();
+        List<Tweet> result = user.getTimeLineIndex() < allTimeLineTweets.size() ?
+                allTimeLineTweets.subList(user.getTimeLineIndex(), allTimeLineTweets.size()) : Collections.emptyList();
         user.setTimeLineIndex(allTimeLineTweets.size());
         logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully refreshed timeline.");
         return result;
