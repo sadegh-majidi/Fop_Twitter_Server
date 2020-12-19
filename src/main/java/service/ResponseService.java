@@ -111,7 +111,7 @@ public class ResponseService {
 
     public void sendTweet(String token, String content) {
         User user = userRepository.getAuthenticatedUserByToken(token);
-        Tweet tweet = new Tweet(content);
+        Tweet tweet = new Tweet(user.getUsername(), content);
         tweetsRepository.addTweet(tweet);
         user.addTweet(tweet);
         userRepository.updateUser(user);
