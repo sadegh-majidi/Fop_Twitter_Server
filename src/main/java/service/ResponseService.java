@@ -162,6 +162,12 @@ public class ResponseService {
         return profile;
     }
 
+    public Map<String, String> getComments(String token, int tweetId) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        Tweet tweet = tweetsRepository.getTweetById(tweetId);
+        return tweet.getComments();
+    }
+
     private Set<String> mergeSets(Set<String> a, Set<String> b) {
         return new HashSet<String>() {{
             addAll(a);

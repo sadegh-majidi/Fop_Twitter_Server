@@ -5,5 +5,6 @@ public enum ResponseType {
     Token,
     Error,
     List,
-    Profile
+    Profile,
+    Map
 }
