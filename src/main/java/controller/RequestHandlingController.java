@@ -50,10 +50,6 @@ public class RequestHandlingController {
                 return changePassword(matcher).convertToJson();
             else if ((matcher = Logout.getPattern().matcher(request)).find())
                 return logout(matcher).convertToJson();
-            else if ((matcher = ViewComments.getPattern().matcher(request)).find())
-                return viewCommentsOfTweet(matcher).convertToJson();
-            else if ((matcher = ViewLikes.getPattern().matcher(request)).find())
-                return viewLikesOfTweet(matcher).convertToJson();
             else
                 throw new BadRequestException("Bad request format.");
         } catch (BadRequestException e) {
@@ -135,5 +131,10 @@ public class RequestHandlingController {
     private Response<Integer> viewLikesOfTweet(Matcher matcher) {
         int likes = responseService.getLikes(matcher.group(1), Integer.parseInt(matcher.group(2)));
         return new Response<>(ResponseType.Successful, likes);
+    }
+
+    private Response<List<TweetView>> refreshTimeLineView(Matcher matcher) {
+        List<TweetView> tweets = responseService.refreshTimeLineTweetView(matcher.group(1));
+        return new Response<>(ResponseType.List, tweets);
     }
 }

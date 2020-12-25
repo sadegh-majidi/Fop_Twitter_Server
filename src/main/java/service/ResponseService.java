@@ -1,10 +1,7 @@
 package service;
 
 import exception.BadRequestException;
-import model.FollowStatus;
-import model.Profile;
-import model.Tweet;
-import model.User;
+import model.*;
 import repository.TweetsRepository;
 import repository.UserRepository;
 import utils.LogLevel;
@@ -165,13 +162,33 @@ public class ResponseService {
     public Map<String, String> getComments(String token, int tweetId) {
         User user = userRepository.getAuthenticatedUserByToken(token);
         Tweet tweet = tweetsRepository.getTweetById(tweetId);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully received comments of tweet " + tweetId + ".");
         return tweet.getComments();
     }
 
     public int getLikes(String token, int tweetId) {
         User user = userRepository.getAuthenticatedUserByToken(token);
         Tweet tweet = tweetsRepository.getTweetById(tweetId);
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully received likes of tweet " + tweetId + ".");
         return tweet.getLikes();
+    }
+
+    public List<TweetView> refreshTimeLineTweetView(String token) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        List<Tweet> allTimeLineTweets = new ArrayList<>();
+        List<String> allConnectedUsers = new ArrayList<>(mergeSets(user.getFollowers(), user.getFollowings()));
+        Collections.sort(allConnectedUsers);
+        for (String connectedUser : allConnectedUsers) {
+            User _user = userRepository.getUserByUsername(connectedUser);
+            allTimeLineTweets.addAll(_user.getPersonalTweets().stream()
+                    .map(id -> tweetsRepository.getTweetById(id)).collect(Collectors.toList()));
+        }
+        List<TweetView> result = user.getTimeLineIndex() < allTimeLineTweets.size() ?
+                allTimeLineTweets.subList(user.getTimeLineIndex(), allTimeLineTweets.size())
+                        .stream().map(TweetView::new).collect(Collectors.toList()) : Collections.emptyList();
+        user.setTimeLineIndex(allTimeLineTweets.size());
+        logger.log(LogLevel.Info, "User " + user.getUsername() + " successfully refreshed timeline.");
+        return result;
     }
 
     private Set<String> mergeSets(Set<String> a, Set<String> b) {

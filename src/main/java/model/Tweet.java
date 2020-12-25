@@ -67,7 +67,6 @@ public class Tweet {
         this.comments.put(commenter, content);
     }
 
-    //TODO: add conditions and exception
     public void removeComment(String commenter) {
         this.comments.remove(commenter);
     }
