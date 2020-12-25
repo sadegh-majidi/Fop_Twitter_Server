@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Server Project:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6f3c2c0-06b8-45a2-8d9a-9645c6ed3ab7" name="Default Changelist" comment="">
+    <list default="true" id="f6f3c2c0-06b8-45a2-8d9a-9645c6ed3ab7" name="Default Changelist" comment="view comment">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Server_Project_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RequestHandlingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ResponseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ResponseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RequestPatternType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RequestPatternType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ResponseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/RequestPatternType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RequestPatternType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Tweet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Tweet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/ResponseService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/ResponseService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/ResponseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/ResponseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/RequestHandlingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/RequestHandlingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ResponseType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ResponseType.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -63,7 +68,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -96,7 +101,9 @@
       <workItem from="1607341502304" duration="35910000" />
       <workItem from="1607522702919" duration="6998000" />
       <workItem from="1607824985751" duration="224000" />
-      <workItem from="1608325985133" duration="12382000" />
+      <workItem from="1608325985133" duration="13946000" />
+      <workItem from="1608668049181" duration="1580000" />
+      <workItem from="1608898525854" duration="859000" />
     </task>
     <task id="LOCAL-00001" summary="migrate from spring boot to socket :))">
       <created>1607294849256</created>
@@ -238,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608399563127</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="view comment">
+      <created>1608413522584</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1608413522584</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +277,8 @@
     <MESSAGE value="search user and profile added" />
     <MESSAGE value="some code refactoring" />
     <MESSAGE value="add author to tweet" />
-    <option name="LAST_COMMIT_MESSAGE" value="add author to tweet" />
+    <MESSAGE value="view comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="view comment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Project_Structure" timestamp="1607288040952">
@@ -274,42 +289,46 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1608399306532" />
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1608399552865">
+    <state x="413" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1608668707495">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1608399552865" />
+    <state x="413" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.738@0.0.1366.738" timestamp="1608668707495" />
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1608899533287">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1608899533287" />
     <state x="110" y="56" key="DiffContextDialog" timestamp="1607422699896">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="110" y="56" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1607422699896" />
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1608409355367">
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1608669911861">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1608409355367" />
-    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1608409355367">
+    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1608669911861" />
+    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1608669911861">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1608409355367" />
-    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1608409355367">
+    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1608669911861" />
+    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1608669911861">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1608409355367" />
-    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1608409355367">
+    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1608669911861" />
+    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1608669911861">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1608409355367" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1607288010153">
+    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1608669911861" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1608668951678">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1607288010153" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1608668951678" />
     <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1607529158645">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1607529158645" />
-    <state x="359" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1608326268552">
+    <state x="359" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1608898607986">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="359" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1608326268552" />
+    <state x="359" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1608898607986" />
     <state x="370" y="142" key="git4idea.merge.GitPullDialog" timestamp="1607295134193">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

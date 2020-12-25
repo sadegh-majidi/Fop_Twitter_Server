@@ -10,6 +10,7 @@ public enum RequestPatternType {
     LikeTweet(Pattern.compile("^like\\s+(.+)\\s*,\\s*(\\d+)$")),
     CommentTweet(Pattern.compile("^comment\\s+(.+)\\s*,\\s*(\\d+)\\s*,\\s*(.+)$")),
     ViewComments(Pattern.compile("^view\\s+comments\\s+(.+)\\s*,\\s*(\\d+)$")),
+    ViewLikes(Pattern.compile("^view\\s+likes\\s+(.+)\\s*,\\s*(\\d+)$")),
     SearchUser(Pattern.compile("^search\\s+(.+)\\s*,\\s*(\\S+)$")),
     Follow(Pattern.compile("^follow\\s+(.+)\\s*,\\s*(\\S+)$")),
     UnFollow(Pattern.compile("^unfollow\\s+(.+)\\s*,\\s*(\\S+)$")),

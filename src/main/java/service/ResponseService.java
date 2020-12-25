@@ -168,6 +168,12 @@ public class ResponseService {
         return tweet.getComments();
     }
 
+    public int getLikes(String token, int tweetId) {
+        User user = userRepository.getAuthenticatedUserByToken(token);
+        Tweet tweet = tweetsRepository.getTweetById(tweetId);
+        return tweet.getLikes();
+    }
+
     private Set<String> mergeSets(Set<String> a, Set<String> b) {
         return new HashSet<String>() {{
             addAll(a);

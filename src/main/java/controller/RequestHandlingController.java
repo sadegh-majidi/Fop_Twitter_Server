@@ -52,6 +52,8 @@ public class RequestHandlingController {
                 return logout(matcher).convertToJson();
             else if ((matcher = ViewComments.getPattern().matcher(request)).find())
                 return viewCommentsOfTweet(matcher).convertToJson();
+            else if ((matcher = ViewLikes.getPattern().matcher(request)).find())
+                return viewLikesOfTweet(matcher).convertToJson();
             else
                 throw new BadRequestException("Bad request format.");
         } catch (BadRequestException e) {
@@ -72,7 +74,7 @@ public class RequestHandlingController {
 
     private Response<String> sendTweet(Matcher matcher) {
         responseService.sendTweet(matcher.group(1), matcher.group(2));
-        return new Response<>(ResponseType.Successful, "Tweet was sent successfully.");
+        return new Response<>(ResponseType.Successful, "Tweet is sent successfully.");
     }
 
     private Response<List<Tweet>> refreshTimeLine(Matcher matcher) {
@@ -97,12 +99,12 @@ public class RequestHandlingController {
 
     private Response<String> follow(Matcher matcher) {
         responseService.follow(matcher.group(1), matcher.group(2));
-        return new Response<>(ResponseType.Successful, "User " + matcher.group(2) + " successfully followed.");
+        return new Response<>(ResponseType.Successful, "User " + matcher.group(2) + " is followed successfully.");
     }
 
     private Response<String> unFollow(Matcher matcher) {
         responseService.unFollow(matcher.group(1), matcher.group(2));
-        return new Response<>(ResponseType.Successful, "User " + matcher.group(2) + " successfully unFollowed.");
+        return new Response<>(ResponseType.Successful, "User " + matcher.group(2) + " is unfollowed successfully.");
     }
 
     private Response<Profile> getProfile(Matcher matcher) {
@@ -112,12 +114,12 @@ public class RequestHandlingController {
 
     private Response<String> setBio(Matcher matcher) {
         responseService.setBio(matcher.group(1), matcher.group(2));
-        return new Response<>(ResponseType.Successful, "Bio successfully updated.");
+        return new Response<>(ResponseType.Successful, "Bio is updated successfully.");
     }
 
     private Response<String> changePassword(Matcher matcher) {
         responseService.changePassword(matcher.group(1), matcher.group(2), matcher.group(3));
-        return new Response<>(ResponseType.Successful, "Password successfully changed.");
+        return new Response<>(ResponseType.Successful, "Password is changed successfully.");
     }
 
     private Response<String> logout(Matcher matcher) {
@@ -128,5 +130,10 @@ public class RequestHandlingController {
     private Response<Map<String, String>> viewCommentsOfTweet(Matcher matcher) {
         Map<String, String> comments = responseService.getComments(matcher.group(1), Integer.parseInt(matcher.group(2)));
         return new Response<>(ResponseType.Map, comments);
+    }
+
+    private Response<Integer> viewLikesOfTweet(Matcher matcher) {
+        int likes = responseService.getLikes(matcher.group(1), Integer.parseInt(matcher.group(2)));
+        return new Response<>(ResponseType.Successful, likes);
     }
 }
