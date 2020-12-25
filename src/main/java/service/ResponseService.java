@@ -73,7 +73,7 @@ public class ResponseService {
         User follower = userRepository.getAuthenticatedUserByToken(token);
         User following = userRepository.getUserByUsername(username);
         if (follower.getUsername().equals(following.getUsername()))
-            throw new BadRequestException("You can't follow yourself!");
+            throw new BadRequestException("You can not follow yourself!");
         if (follower.hasFollowing(following))
             throw new BadRequestException("User " + following.getUsername() + " is already followed by you.");
         follower.addFollowing(following);
@@ -97,7 +97,6 @@ public class ResponseService {
         logger.log(LogLevel.Info, "User " + follower.getUsername() + " successfully unFollowed user " + following.getUsername() + ".");
     }
 
-    //TODO: har nafar faghat mitone 1 bar like kone ya mohem nis??
     public void likeTweet(String token, int tweetId) {
         User user = userRepository.getAuthenticatedUserByToken(token);
         Tweet tweet = tweetsRepository.getTweetById(tweetId);
@@ -143,6 +142,8 @@ public class ResponseService {
     public Profile search(String token, String username) {
         User user = userRepository.getAuthenticatedUserByToken(token);
         User searchedUser = userRepository.getUserByUsername(username);
+        if (user.getUsername().equals(searchedUser.getUsername()))
+            throw new BadRequestException("Searched username is your username.");
         Profile profile;
         if (user.hasFollowing(searchedUser))
             profile = new Profile(searchedUser, FollowStatus.Followed);
